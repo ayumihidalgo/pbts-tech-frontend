@@ -21,8 +21,25 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors());
+// --- UPDATED CORS MIDDLEWARE ---
+const allowedOrigins = [
+  'http://localhost:5173', // Local Vite development
+  'https://your-frontend-name.vercel.app' // TODO: Replace with your actual Vercel URL
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like server-to-server or Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Blocked by CORS'));
+    }
+  },
+  credentials: true
+}));
+// --------------------------------
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
