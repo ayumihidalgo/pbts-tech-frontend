@@ -1058,7 +1058,7 @@ footer {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  opacity: 0.08;
+  opacity: 0.1;
   filter: grayscale(40%) contrast(1.1);
   pointer-events: none;
   /* Fades out smoothly on the left, right, and bottom edges */
