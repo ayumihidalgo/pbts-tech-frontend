@@ -1,0 +1,5 @@
+server/
+database.js
+uploads/
+.env
+*.sql
