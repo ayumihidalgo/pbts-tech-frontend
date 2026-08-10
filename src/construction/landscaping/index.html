@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landscaping — Construction | PBTS Technology</title>
+</head>
+<body>
+  <header class="topnav">
+    <div class="nav-inner" id="nav-mount"></div>
+    <div class="mobile-panel" id="mobile-nav-mount"></div>
+  </header>
+
+  <main class="page-shell">
+    <div class="page-header" id="page-header-mount"></div>
+
+    <div class="content-area">
+      <div class="inner">
+        <span class="tag">Empty state</span>
+        <h3>Content area</h3>
+        <p>Ready for real content — project photos, specs, capabilities.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer-mount"></footer>
+
+  <script type="module">
+    import { initPage } from '/src/main.js';
+    initPage({
+      header: {
+        eyebrow: 'Construction',
+        breadcrumb: ["Construction","Landscaping"],
+        title: 'Landscaping',
+        intro: 'Site grading, planting, and hardscape work that finishes a project properly.'
+      }
+    });
+  </script>
+</body>
+</html>
