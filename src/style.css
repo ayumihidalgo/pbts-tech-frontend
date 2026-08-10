@@ -1057,13 +1057,15 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center center;
   opacity: 0.08;
   filter: grayscale(40%) contrast(1.1);
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse 65% 60% at 32% 42%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 55%, transparent 85%);
-  mask-image: radial-gradient(ellipse 65% 60% at 32% 42%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 55%, transparent 85%);
+  /* Fades out smoothly only at the bottom, keeping left/right edges untouched */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
 }
+
 html[data-theme="dark"] .hero-bg-photo {
   opacity: 0.14;
   filter: grayscale(30%) contrast(1.15) brightness(0.9);
@@ -1388,8 +1390,8 @@ html[data-theme="dark"] .hero-visual::before {
   }
 
   .hero-bg-photo {
-    -webkit-mask-image: radial-gradient(ellipse 90% 38% at 50% 18%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 55%, transparent 78%);
-    mask-image: radial-gradient(ellipse 90% 38% at 50% 18%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 55%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 38% at 50% 18%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 55%, transparent 78%);
+    mask-image: radial-gradient(ellipse 90% 38% at 50% 18%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 55%, transparent 78%);
   }
 }
 
@@ -1979,6 +1981,7 @@ html[data-theme="dark"] .logo-item:hover .logo-img {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
