@@ -8,8 +8,14 @@ import { OFFICES_DETAIL } from "../data/content.js";
  * Connected to SQL Server Express database via /api/contact API.
  */
 export class ContactFormComponent extends Component {
-  constructor(offices = OFFICES_DETAIL) {
-    super({ offices });
+  constructor({
+    offices = OFFICES_DETAIL,
+    eyebrow = "Get in touch",
+    title = "Let's talk about your project",
+    body = "We welcome your inquiries, feedback, and suggestions. Send us a message using the form and our team will get back to you promptly.",
+    showOfficesDetail = true,
+  } = {}) {
+    super({ offices, eyebrow, title, body, showOfficesDetail });
   }
 
   renderOfficeDetail(office) {
@@ -83,12 +89,13 @@ export class ContactFormComponent extends Component {
   }
 
   render() {
+    const { eyebrow, title, body, showOfficesDetail } = this.props;
     return `
       <div class="split-form">
         <div class="form-panel">
-          <span class="eyebrow"><span class="dot"></span>Get in touch</span>
-          <h2>Let's talk about your project</h2>
-          <p>We welcome your inquiries, feedback, and suggestions. Send us a message using the form and our team will get back to you promptly.</p>
+          <span class="eyebrow"><span class="dot"></span>${eyebrow}</span>
+          <h2>${title}</h2>
+          <p>${body}</p>
 
           <div class="info-rows">
             <div class="info-row">
@@ -132,8 +139,12 @@ export class ContactFormComponent extends Component {
         </div>
       </div>
 
-      <div class="offices-detail">
+      ${
+        showOfficesDetail
+          ? `<div class="offices-detail">
         ${this.props.offices.map((office) => this.renderOfficeDetail(office)).join("")}
-      </div>`;
+      </div>`
+          : ""
+      }`;
   }
 }

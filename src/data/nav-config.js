@@ -34,5 +34,5 @@ export const NAV = [
   },
   { label: "Clients", route: "/clients/" },
   { label: "Career", route: "/career/" },
-  { label: "Contact Us", route: "/contact/" },
+  { label: "Contact Us", route: "/#contact" },
 ];

@@ -31,7 +31,7 @@ export class FooterComponent extends Component {
             <li><a href="/">Home</a></li>
             <li><a href="/clients/">Clients</a></li>
             <li><a href="/career/">Career</a></li>
-            <li><a href="/contact/">Contact us</a></li>
+            <li><a href="/#contact">Contact us</a></li>
           </ul>
         </div>
 
@@ -71,7 +71,7 @@ export class FooterComponent extends Component {
       <div class="footer-bottom">
         <div class="footer-inner">
           <span>&copy; ${year} PBTS Technology. All rights reserved.</span>
-          <a href="/contact/" class="text-link">Get a quote &rarr;</a>
+          <a href="/#contact" class="text-link">Get a quote &rarr;</a>
         </div>
       </div>`;
   }

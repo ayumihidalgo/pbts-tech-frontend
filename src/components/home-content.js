@@ -6,7 +6,7 @@ import { LogosStripComponent } from "./logos-strip.js";
 import { HistorySplitComponent } from "./history-split.js";
 import { WelcomeMessageComponent } from "./welcome-message.js";
 import { ValueGridComponent } from "./value-grid.js";
-import { CtaBannerComponent } from "./cta-banner.js";
+import { ContactFormComponent } from "./contact-form.js";
 import { HERO_STATS, DIVISIONS, PROOF_ITEMS, CLIENT_LOGOS, VALUES } from "../data/content.js";
 
 /**
@@ -22,6 +22,16 @@ export class HomeContentComponent extends Component {
     // (the carousel's cycling logic) after render() has already been used
     // to compose the flat HTML string for the rest of the page.
     this.hero = new HeroComponent(HERO_STATS);
+
+    // Same component that powers the standalone /contact/ page, reused here
+    // (with the CTA banner's copy and no offices strip) so the "Have a
+    // project in mind?" spot on the home page is a real, working form —
+    // not just a link out to another page.
+    this.contactForm = new ContactFormComponent({
+      title: "Have a project in mind?",
+      body: "Tell us what you're building or manufacturing — we'll get back to you with next steps.",
+      showOfficesDetail: false,
+    });
   }
 
   render() {
@@ -42,11 +52,16 @@ export class HomeContentComponent extends Component {
 
       ${new ValueGridComponent(VALUES).render()}
 
-      ${new CtaBannerComponent().render()}`;
+      <section class="contact-section" id="contact">
+        ${this.contactForm.render()}
+      </section>`;
   }
 
   afterMount(el) {
     const heroSection = el.querySelector(".hero");
     if (heroSection) this.hero.afterMount(heroSection);
+
+    const contactSection = el.querySelector("#contact");
+    if (contactSection) this.contactForm.afterMount(contactSection);
   }
 }

@@ -67,7 +67,7 @@ export class NavComponent extends Component {
           <span class="theme-icon theme-icon-sun">${ICONS.sun}</span>
           <span class="theme-icon theme-icon-moon">${ICONS.moon}</span>
         </button>
-        <a href="/contact/" class="cta">Get a quote</a>
+        <a href="/#contact" class="cta">Get a quote</a>
         <div class="hamburger" id="hamburger"><span></span></div>
       </div>`;
   }

@@ -159,7 +159,7 @@ export class HeroComponent extends Component {
           <h1>We don't chase wins.<br/><span class="grad">We repeat them.</span></h1>
           <p>From pre-engineered warehouses to board-level PCB engineering, PBTS Technology self-performs every project with clear direction and discipline.</p>
           <div class="hero-actions">
-            <a href="/contact/" class="btn-primary">Request a quote</a>
+            <a href="/#contact" class="btn-primary">Request a quote</a>
             <a href="/projects/completed/" class="btn-ghost">See our completed work</a>
           </div>
           <div class="stat-row">

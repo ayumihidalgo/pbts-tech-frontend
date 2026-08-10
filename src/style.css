@@ -2204,6 +2204,25 @@ html[data-theme="dark"] .logo-item:hover .logo-img {
 }
 
 /* ==========================================================================
+   Home page "Have a project in mind?" contact section
+   ========================================================================== */
+.contact-section {
+  scroll-margin-top: 100px;
+  padding-top: 10px;
+  margin-bottom: 90px;
+}
+
+.contact-section .split-form {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .contact-section {
+    scroll-margin-top: 84px;
+  }
+}
+
+/* ==========================================================================
    Split form layout (Contact / Career)
    ========================================================================== */
 .split-form {

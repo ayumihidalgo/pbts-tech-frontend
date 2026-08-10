@@ -9,7 +9,7 @@ export class CtaBannerComponent extends Component {
     title = "Have a project in mind?",
     body = "Tell us what you're building or manufacturing — we'll get back to you with next steps.",
     buttonLabel = "Get a quote",
-    buttonHref = "/contact/",
+    buttonHref = "/#contact",
   } = {}) {
     super({ title, body, buttonLabel, buttonHref });
   }
