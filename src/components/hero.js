@@ -152,6 +152,7 @@ export class HeroComponent extends Component {
 
   render() {
     return `
+      <img class="hero-bg-photo" src="https://images.unsplash.com/photo-1581091212991-8891c7d4bd9b?w=1600&auto=format&fit=crop&q=80" alt="" aria-hidden="true" onerror="this.remove();" />
       <div class="hero-grid">
         <div class="hero-content">
           <span class="eyebrow"><span class="dot"></span>Construction &amp; manufacturing, under one roof</span>
